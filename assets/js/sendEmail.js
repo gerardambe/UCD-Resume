@@ -1,7 +1,7 @@
-function sendMail(contactForm){
+function sendMail(contactForm) {
     emailjs.send("gmail", "resume", {
         "from_name": contactForm.fullname.value,
-        "from_email": contactForm.email.value,
+        "from_email": contactForm.emailaddress.value,
         "project_request": contactForm.projectsummary.value
     })
     .then(
@@ -9,7 +9,7 @@ function sendMail(contactForm){
             console.log("SUCCESS", response);
         },
         function(error) {
-            console.log("FAILURE", error);
+            console.log("FAILED", error); 
         });
         return false;
 }
